@@ -5,7 +5,7 @@ export class EnvParser {
         if (defaultValue !== undefined) return defaultValue;
         throw new Error(`Environment variable ${key} is required`);
       }
-      return value;
+      return value.trim();
     }
   
     static getNumber(key: string, defaultValue?: number): number {

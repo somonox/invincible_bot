@@ -1,17 +1,22 @@
-import triangle from '@haelp/teto';
 import dotenv from 'dotenv';
 import { EnvParser } from './utils/env_parser.js';
+import { AppClient, AppConfig } from './app/app_client.js';
 
 dotenv.config();
 
-export const config = {
-    tetrio: {
-        tetrioUsername: EnvParser.getString('TET_USERNAME'),
-        tetrioPassword: EnvParser.getString('TET_PASSWORD')
-    }
+// TODO: Implement config validater
+export const config = new AppConfig (
+    EnvParser.getString('TET_USERNAME'),
+    EnvParser.getString('TET_PASSWORD')
+)
+const client = new AppClient(config);
+
+async function main() {
+    // Initialize client async is really needed because core API(triangle.js) is initialized asynchronously  
+    console.log('Initilize Client with User: ' + config.tetrioUsername)
+    await client.init();
+    console.log('Client initialized!');
+    console.log(await client.createRoom());
 }
 
-const client = triangle.Client.connect({
-    username: config.tetrio.tetrioUsername,
-    password: config.tetrio.tetrioPassword
-})
+main();
