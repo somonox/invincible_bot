@@ -21,7 +21,9 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "@haelp/teto": "^3.2.2",
     "dotenv": "^17.2.1",
     "ws": "^8.18.3"
-  }
+  },
+  "type": "module"
 }

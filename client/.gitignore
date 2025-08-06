@@ -9,6 +9,9 @@ build/
 .vscode/
 .idea/
 
+# Environment variables
+.env
+
 # OS
 .DS_Store
 Thumbs.db
