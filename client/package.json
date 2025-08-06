@@ -1,0 +1,27 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "Tetrio client of Invincible_bot",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "watch": "nodemon --exec ts-node src/index.ts",
+    "clean": "rm -rf dist"
+  },
+  "author": "somonox (Tetrio A6A6)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/node": "^24.2.0",
+    "@types/ws": "^8.18.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "ws": "^8.18.3"
+  }
+}
