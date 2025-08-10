@@ -14,9 +14,10 @@ const client = new AppClient(config);
 async function main() {
     // Initialize client async is really needed because core API(triangle.js) is initialized asynchronously  
     console.log('Initilize Client with User: ' + config.tetrioUsername)
-    await client.init();
+    await client.init("ws://localhost:8000/ws");
     console.log('Client initialized!');
-    console.log(await client.createRoom());
+    //console.log(await client.createRoom());
+    await client.waitForStart();
 }
 
 main();
