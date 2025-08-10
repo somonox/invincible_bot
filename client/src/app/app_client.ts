@@ -231,7 +231,7 @@ export class AppClient {
         }
 
         switch (aiAction.action_type) {
-            case 'move_left':
+            case 'left':
                 keys.push({
                     frame,
                     type: 'keydown',
@@ -244,7 +244,7 @@ export class AppClient {
                 });
                 break;
                 
-            case 'move_right':
+            case 'right':
                 keys.push({
                     frame,
                     type: 'keydown',
